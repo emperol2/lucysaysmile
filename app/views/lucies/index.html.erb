@@ -1,25 +1,34 @@
-<h1>Listing lucies</h1>
+<div class="row">
+  <div class="col-xs-3">
+    <h3>Tealeaf Academy Todo</h3>
+  </div>
+  <div class="col-xs-9">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h1>Listing lucies</h1>
 
-  <tbody>
-    <% @lucies.each do |lucy| %>
+    <table class="table table-hover">
+      <thead>
       <tr>
-        <td><%= lucy.title %></td>
-        <td><%= link_to 'Show', lucy %></td>
-        <td><%= link_to 'Edit', edit_lucy_path(lucy) %></td>
-        <td><%= link_to 'Destroy', lucy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @lucies.each do |lucy| %>
+          <tr>
+            <td><%= lucy.title %></td>
+            <td><%= link_to 'Show', lucy %></td>
+            <td><%= link_to 'Edit', edit_lucy_path(lucy) %></td>
+            <td><%= link_to 'Destroy', lucy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Lucy', new_lucy_path %>
+    <br>
+
+    <%= link_to 'New Lucy', new_lucy_path %>
+
+  </div>
+</div>
