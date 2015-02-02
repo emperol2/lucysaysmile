@@ -1,0 +1,21 @@
+<%= form_for(@lucy) do |f| %>
+  <% if @lucy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lucy.errors.count, "error") %> prohibited this lucy from being saved:</h2>
+
+      <ul>
+      <% @lucy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

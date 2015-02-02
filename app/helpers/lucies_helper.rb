@@ -1,0 +1,2 @@
+module LuciesHelper
+end
