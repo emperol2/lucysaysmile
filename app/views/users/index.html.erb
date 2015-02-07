@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-xs-3">
+    <h3>Tealeaf Academy Todo</h3>
+  </div>
+  <div class="col-xs-9">
+
+    <h1>Listing users</h1>
+
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Created at</th>
+        <th>Updated at</th>
+        <th>Password digest</th>
+        <th>Contact number</th>
+        <th>Company name</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Company type</th>
+        <th>Zipcode</th>
+        <th>Address</th>
+        <th>State</th>
+        <th>Timezone</th>
+        <th>About company</th>
+        <th>Website</th>
+        <th>Paypal account</th>
+        <th>Payment info</th>
+        <th>Skpye</th>
+        <th>Linkedin</th>
+        <th>Gender</th>
+        <th>About me</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @users.each do |user| %>
+          <tr>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.created_at %></td>
+            <td><%= user.updated_at %></td>
+            <td><%= user.password_digest %></td>
+            <td><%= user.contact_number %></td>
+            <td><%= user.company_name %></td>
+            <td><%= user.city %></td>
+            <td><%= user.country %></td>
+            <td><%= user.company_type %></td>
+            <td><%= user.zipcode %></td>
+            <td><%= user.address %></td>
+            <td><%= user.state %></td>
+            <td><%= user.timezone %></td>
+            <td><%= user.about_company %></td>
+            <td><%= user.website %></td>
+            <td><%= user.paypal_account %></td>
+            <td><%= user.payment_info %></td>
+            <td><%= user.skpye_id %></td>
+            <td><%= user.linkedin_id %></td>
+            <td><%= user.gender %></td>
+            <td><%= user.about_me %></td>
+            <td><%= link_to 'Show', user %></td>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New User', new_user_path %>
+
+  </div>
+</div>
