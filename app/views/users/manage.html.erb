@@ -1,0 +1,102 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading user">
+        <h3 class="panel-title">Panel title</h3>
+      </div>
+      <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacus tortor, lacinia eget venenatis sit amet, varius at tellus. Etiam quis elit in ipsum imperdiet porta. In placerat dapibus tempus. Etiam quis finibus leo. Mauris cursus faucibus justo nec hendrerit. Donec fringilla arcu diam, in interdum nisl tristique ut. Praesent feugiat lorem massa, at tincidunt metus placerat sed. Sed ac turpis vehicula, fermentum enim eu, viverra odio. Etiam vel enim faucibus, bibendum dolor ac, elementum arcu. Sed nunc quam, ultrices nec erat eget, dapibus condimentum mi.</p>
+        <p><%= @user.first_name %> <%= @user.last_name %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-3">
+    <ul class="nav nav-pills nav-stacked">
+
+      <li role="presentation">
+        <%= link_to user_path() do %>
+            <i id="my-icon" class="fa fa-arrow-left"></i> Dashboard
+        <% end %>
+      </li>
+      <li role="presentation" class="active">
+        <%= link_to '#' do %>
+            <i id="my-icon" class="fa fa-cog"></i> Manage Profile
+        <% end %>
+      </li>
+      <li role="presentation">
+        <%= link_to user_path() do %>
+            <i id="my-icon" class="fa fa-user"></i> Basic Info
+        <% end %>
+      </li>
+      <li role="presentation">
+        <%= link_to user_path() do %>
+            <i id="my-icon" class="fa fa-pencil-square-o"></i> Projects
+        <% end %>
+      </li>
+      <li role="presentation">
+        <%= link_to user_path() do %>
+            <i id="my-icon" class="fa fa-credit-card"></i> Payment Info
+        <% end %>
+      </li>
+      <li role="presentation">
+        <%= link_to user_path() do %>
+            <i id="my-icon" class="fa fa-flag strong"></i> Setting & Promote
+        <% end %>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="col-xs-9">
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="panel panel-default manage">
+            <div class="panel-body">
+              <span>To see performance analytics</span>
+            </div>
+          </div>
+        </div>
+        <p>Basic panel example</p>
+        <ul class="list-unstyled improve-list clearfix">
+          <li>
+            <h4><strong>Projects information</strong></h4>
+            <p>View your challenge results report and get an overview of your application quality.</p>
+            <button type="button" class="btn btn-info">View projects</button>
+          </li>
+
+          <li>
+            <h4><strong>Basic information</strong></h4>
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                <span class="sr-only">40% Complete (success)</span>
+              </div>
+            </div>
+            <p>Your challenge description has 1 words. Successful challenges have over 100 words in the description.</p>
+            <%= link_to 'Improve description', edit_user_path, :class => 'btn btn-info' %>
+          </li>
+
+          <li>
+            <h4><strong>Payment information</strong></h4>
+            <p>Challenges with photo attract more quality testers.</p>
+            <button type="button" class="btn btn-info">Update payment</button>
+          </li>
+
+          <li>
+            <h4><strong>Profile photo</strong></h4>
+            <p>Challengers with profile photo get more testers to their Challenges.</p>
+            <button type="button" class="btn btn-info">Upload photo</button>
+          </li>
+        </ul>
+
+
+        </ul>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

@@ -8,6 +8,7 @@ gem 'sqlite3'
 # bootstrap-sass 3.2.0
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'font-awesome-sass', '~> 4.3.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

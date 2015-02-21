@@ -29,9 +29,33 @@ code {
   font-size: 80%;
 }
 
+div.panel-heading.user {
+  background-color: #444680;
+  color: #FFFFFF;
+}
 
-.panel-heading {
-  background-color: #444680 !important;
-  color: #FFFFFF !important;
+a:visited.bug-tooltip {
+  color: #428bca;
 
+}
+
+a:hover.bug-tooltip {
+  color: #428bca;
+  background-color: #ffffff;
+
+}
+
+div.panel-default.manage {
+  margin: 20px 15px 20px 15px;
+}
+
+.improve-list li{
+  width: 45% ;
+  float: left ;
+  margin: 20px 15px;
+
+}
+
+a:visited.btn {
+  color: #ffffff;
 }
