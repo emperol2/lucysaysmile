@@ -19,13 +19,13 @@
             <i id="my-icon" class="fa fa-arrow-left"></i> Dashboard
         <% end %>
       </li>
-      <li role="presentation" class="active">
-        <%= link_to '#' do %>
+      <li role="presentation" class="<%= is_active?(manage_user_path) %>">
+        <%= link_to manage_user_path() do %>
             <i id="my-icon" class="fa fa-cog"></i> Manage Profile
         <% end %>
       </li>
-      <li role="presentation">
-        <%= link_to user_path() do %>
+      <li role="presentation" class="<%= is_active?(edit_user_path) %>">
+        <%= link_to edit_user_path() do %>
             <i id="my-icon" class="fa fa-user"></i> Basic Info
         <% end %>
       </li>
