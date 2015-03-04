@@ -69,6 +69,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def projects
+    @user = User.find(params[:id])
+
+  end
+
+  def dashboard
+    @user = User.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

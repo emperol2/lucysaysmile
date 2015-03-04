@@ -22,5 +22,17 @@ module Lucysaysmile
 
     #ActionView::Base.field_error_proc = Proc.new { |html_tag, instance|
     #  "<div class=\"field_with_errors modify\">#{html_tag}</div>".html_safe }
+    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+      errors = Array(instance.error_message).join(',')
+
+      if html_tag =~ /^<label/
+        html_tag
+      else
+        #%(#{html_tag}<span class="validation-error">&nbsp;#{errors}</span>).html_safe
+        "<div class=\"field_with_errors\">#{html_tag}</div>".html_safe
+      end
+
+    end
+
   end
 end

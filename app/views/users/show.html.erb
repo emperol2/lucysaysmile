@@ -1,185 +1,143 @@
-<div class="row">
-  <div class="col-xs-3">
+<!--<hr class="">-->
+<div class="container target">
+  <div class="row">
+    <div class="col-sm-10">
+      <!--<h1 class="">Starfox221</h1>-->
+      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <%= link_to dashboard_user_path(), :class => "btn btn-info" do %>
+          <i id="my-icon" class="fa fa-arrow-left"></i> Dashboard
+      <% end %>
 
-    <div class="panel panel-default">
-      <div class="panel-heading user">
-        <h3 class="panel-title">Personal Info</h3>
+      <button type="button" class="btn btn-success">Book me!</button>
+      <button type="button" class="btn btn-info">Send me a message</button>
+
+      <br>
+    </div>
+    <div class="col-sm-2"><!-- <a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.rlsandbox.com/img/profile.jpg"></a> -->
+      <img title="profile image" class="img-circle img-responsive" src="http://www.rlsandbox.com/img/profile.jpg">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-3">
+      <!--left col-->
+      <ul class="list-group">
+        <li class="list-group-item text-mute" contenteditable="false">Profile</li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span><%= @user.created_at.to_date %></li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> Yesterday</li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span> Joseph
+          Doe</li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Role: </strong></span> Pet Sitter
+
+        </li>
+      </ul>
+      <div class="panel panel-default">
+        <div class="panel-heading">Insured / Bonded?
+
+        </div>
+        <div class="panel-body"><i style="color:green" class="fa fa-check-square"></i> Yes, I am insured and bonded.
+
+        </div>
       </div>
-      <div class="panel-body">
-        <p><%= link_to 'Manage Link', manage_user_path %></p>
-        <p>
-          <strong>First name:</strong>
-          <%= @user.first_name %>
-        </p>
+      <div class="panel panel-default">
+        <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i>
 
-        <p>
-          <strong>Last name:</strong>
-          <%= @user.last_name %>
-        </p>
+        </div>
+        <div class="panel-body"><a href="http://www.google.com" class="">www.google.com</a>
 
-        <p>
-          <strong>Email:</strong>
-          <%= @user.email %>
-        </p>
-        <div class="pull-right">
-          <input class="btn btn-default" type="submit" value="Edit">
+        </div>
+      </div>
+
+      <ul class="list-group">
+        <li class="list-group-item text-mute">Activity <i class="fa fa-dashboard fa-1x"></i>
+
+        </li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Shares</strong></span> 125</li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Likes</strong></span> 13</li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Posts</strong></span> 37</li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Followers</strong></span> 78</li>
+      </ul>
+      <div class="panel panel-default">
+        <div class="panel-heading">Social Media</div>
+        <div class="panel-body">	<i class="fa fa-facebook fa-2x"></i>  <i class="fa fa-github fa-2x"></i>
+          <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i>  <i class="fa fa-google-plus fa-2x"></i>
+
+        </div>
+      </div>
+    </div>
+    <!--/col-3-->
+    <div class="col-sm-9" style="" contenteditable="false">
+      <div class="panel panel-default">
+        <div class="panel-heading"><%= @user.first_name %> <%= @user.last_name %>'s Bio</div>
+        <div class="panel-body"><%= @user.about_me %>
+
+        </div>
+      </div>
+      <div class="panel panel-default target">
+        <div class="panel-heading" contenteditable="false">Pets I Own</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <img alt="300x200" src="http://lorempixel.com/600/200/people">
+                <div class="caption">
+                  <h3>
+                    Rover
+                  </h3>
+                  <p>
+                    Cocker Spaniel who loves treats.
+                  </p>
+                  <p>
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <img alt="300x200" src="http://lorempixel.com/600/200/city">
+                <div class="caption">
+                  <h3>
+                    Marmaduke
+                  </h3>
+                  <p>
+                    Is just another friendly dog.
+                  </p>
+                  <p>
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <img alt="300x200" src="http://lorempixel.com/600/200/sports">
+                <div class="caption">
+                  <h3>
+                    Rocky
+                  </h3>
+                  <p>
+                    Loves catnip and naps. Not fond of children.
+                  </p>
+                  <p>
+
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>
-    </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Company Profile</div>
+        <div class="panel-body"><%= @user.about_company %>
 
-    <div class="panel panel-default">
-      <div class="panel-heading user">
-        <h3 class="panel-title">Statistics</h3>
-      </div>
-      <div class="panel-body">
-        <p>test col-sx-3</p>
-
-        <p><span class="badge">3760</span> Lucysmile score
-          <a class="bug-tooltip" href="#" rel="tooltip" title="First tooltip for score, this is the second line score" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-question-sign"></span>
-          </a>
-        </p>
-
-        <p><span class="badge">1026</span> Profile views
-          <a class="bug-tooltip" href="#" rel="tooltip" title="First tooltip for score, this is the second line score" data-placement="top" data-toggle="tooltip">
-            <span class="glyphicon glyphicon-question-sign"></span>
-          </a>
-        </p>
-
-      </div>
-    </div>
-
-    <div class="panel panel-default">
-      <div class="panel-heading user">
-        <h3 class="panel-title">Verification</h3>
-      </div>
-      <div class="panel-body">
-        <p>test col-sx-3</p>
-        <p><span class="glyphicon glyphicon-ok"></span> Facebook Connected</p>
-        <p><span class="glyphicon glyphicon-remove"></span> Facebook Connected</p>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="col-xs-9">
-
-    <div class="panel panel-default">
-      <div class="panel-heading user">
-        <h3 class="panel-title">Panel title</h3>
-      </div>
-      <div class="panel-body">
-        test col-sx-9
-      </div>
-    </div>
-
-    <p id="notice"><%= notice %></p>
-
-    <p>
-      <strong>Created at:</strong>
-      <%= @user.created_at %>
-    </p>
-
-    <p>
-      <strong>Updated at:</strong>
-      <%= @user.updated_at %>
-    </p>
-
-    <p>
-      <strong>Password digest:</strong>
-      <%= @user.password_digest %>
-    </p>
-
-    <p>
-      <strong>Contact number:</strong>
-      <%= @user.contact_number %>
-    </p>
-
-    <p>
-      <strong>Company name:</strong>
-      <%= @user.company_name %>
-    </p>
-
-    <p>
-      <strong>City:</strong>
-      <%= @user.city %>
-    </p>
-
-    <p>
-      <strong>Country:</strong>
-      <%= @user.country %>
-    </p>
-
-    <p>
-      <strong>Company type:</strong>
-      <%= @user.company_type %>
-    </p>
-
-    <p>
-      <strong>Zipcode:</strong>
-      <%= @user.zipcode %>
-    </p>
-
-    <p>
-      <strong>Address:</strong>
-      <%= @user.address %>
-    </p>
-
-    <p>
-      <strong>State:</strong>
-      <%= @user.state %>
-    </p>
-
-    <p>
-      <strong>Timezone:</strong>
-      <%= @user.timezone %>
-    </p>
-
-    <p>
-      <strong>About company:</strong>
-      <%= @user.about_company %>
-    </p>
-
-    <p>
-      <strong>Website:</strong>
-      <%= @user.website %>
-    </p>
-
-    <p>
-      <strong>Paypal account:</strong>
-      <%= @user.paypal_account %>
-    </p>
-
-    <p>
-      <strong>Payment info:</strong>
-      <%= @user.payment_info %>
-    </p>
-
-    <p>
-      <strong>Skpye:</strong>
-      <%= @user.skpye_id %>
-    </p>
-
-    <p>
-      <strong>Linkedin:</strong>
-      <%= @user.linkedin_id %>
-    </p>
-
-    <p>
-      <strong>Gender:</strong>
-      <%= @user.gender %>
-    </p>
-
-    <p>
-      <strong>About me:</strong>
-      <%= @user.about_me %>
-    </p>
-
-    <%= link_to 'Edit', edit_user_path(@user) %> |
-    <%= link_to 'Back', users_path %>
-
-
+        </div>
+      </div></div>
 
   </div>
 </div>

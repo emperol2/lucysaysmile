@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     member do
       get 'manage'
       get 'profile'
+      get 'projects'
+      get 'dashboard'
     end
 
   end
