@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:show, :index, :edit, :update]
+  before_action :correct_user, only: [:index, :edit, :update]
 
   # GET /users
   # GET /users.json
@@ -72,7 +74,6 @@ class UsersController < ApplicationController
 
   def projects
     @user = User.find(params[:id])
-
   end
 
   def payment
@@ -86,11 +87,32 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      #@user = User.find(params[:id])
+      @user = User.find_by_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :created_at, :updated_at, :password_digest, :contact_number, :company_name, :city, :country, :company_type, :zipcode, :address, :state, :timezone, :about_company, :website, :paypal_account, :payment_info, :skpye_id, :linkedin_id, :gender, :about_me, :password, :password_confirmation)
     end
+
+    # Before filters
+
+    # Confirms a logged-in user.
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+
+    # Confirms the correct user.
+    def correct_user
+      #@user = User.find(params[:id])
+      @user = User.find_by_id(params[:id])
+      flash[:danger] = "You are not allow to see other profiles."
+      redirect_to(current_user) unless current_user?(@user)
+    end
+
 end
