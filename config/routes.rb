@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get 'profile'
       get 'projects'
       get 'dashboard'
+      get 'payment'
     end
 
   end

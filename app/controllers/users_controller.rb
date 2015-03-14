@@ -74,6 +74,10 @@ class UsersController < ApplicationController
 
   end
 
+  def payment
+    @user = User.find(params[:id])
+  end
+
   def dashboard
     @user = User.find(params[:id])
   end

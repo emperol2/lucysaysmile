@@ -38,8 +38,8 @@
           <i id="my-icon" class="fa fa-pencil-square-o"></i> Projects
       <% end %>
     </li>
-    <li role="presentation">
-      <%= link_to user_path() do %>
+    <li role="presentation" class="<%= is_active?(payment_user_path) %>">
+      <%= link_to payment_user_path() do %>
           <i id="my-icon" class="fa fa-credit-card"></i> Payment Info
       <% end %>
     </li>
