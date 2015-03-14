@@ -2,8 +2,9 @@
 <div class="container target">
   <div class="row">
     <div class="col-sm-10">
+      <p id="notice"><%= notice %></p>
       <!--<h1 class="">Starfox221</h1>-->
-      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
       <%= link_to dashboard_user_path(), :class => "btn btn-info" do %>
           <i id="my-icon" class="fa fa-arrow-left"></i> Dashboard
       <% end %>
@@ -23,7 +24,7 @@
       <!--left col-->
       <ul class="list-group">
         <li class="list-group-item text-mute" contenteditable="false">Profile</li>
-        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span><%= @user.created_at.to_date %></li>
+        <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span><%= current_user.created_at.to_date %></li>
         <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span> Yesterday</li>
         <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span> Joseph
           Doe</li>
